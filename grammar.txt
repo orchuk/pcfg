@@ -1,0 +1,33 @@
+################
+# Start Symbol #
+################
+start_variable S
+
+###########
+# Grammar #
+###########
+S -> NP VP [0.8]
+S -> Aux NP VP [0.15]
+S -> VP [0.05]
+
+NP -> Pr [0.4]
+NP -> Proper-Noun [0.35]
+NP -> Det Nom [0.2]
+NP -> Nom [0.05]
+Nom -> N [0.75]
+Nom -> N Nom [0.2]
+Nom -> Proper-Noun Nom [0.05]
+
+VP -> V [0.55]
+VP -> V NP [0.4]
+VP -> V NP NP [0.05]
+
+###########
+# Lexicon #
+###########
+Det -> "that" [0.05] | "the" [0.8] | "a" [0.15]
+N -> "book" [0.1] | "flights" [0.5] | "meal" [0.4]
+V -> "book" [0.3] | "include" [0.3] | "want" [0.4]
+Aux -> "can" [0.4] | "does" [0.3] | "do" [0.3]
+Proper-Noun -> "TWA" [0.5] | "Denver" [0.5]
+Pr -> "you" [0.4] | "I" [0.6]
